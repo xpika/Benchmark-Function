@@ -12,8 +12,6 @@ makeMonoid xs = Prelude.foldl mappend mempty (Prelude.map pure xs)
 
 list = [1..10000]
 
-
-
 main = do 
   print "initialising data"
   let list' = list
