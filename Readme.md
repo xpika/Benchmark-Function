@@ -1,3 +1,4 @@
+```
 "initialising data"
 "initialising Data.List"
 "initialising Data.Vector"
@@ -5,10 +6,12 @@
 "initialising Data.Sequence"
 "finish initialising data"
 testing Data.List.(!!) 
-0.488837
+0.356282
 testing Data.Vector.(!) 
-0.062405
+0.059852
 testing Data.RandomAcessList.index 
-2.177315
+2.19884
 testing Data.Sequence.index
-0.064495
+0.064547
+
+```
