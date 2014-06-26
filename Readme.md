@@ -8,14 +8,14 @@
 "initialising Data.Sequence"
 "finish initialising data"
 testing Prelude.!! 
-0.452955
+0.506219
 testing Data.Vector.! 
-0.058301
+0.062874
 testing Data.Bimap.! 
-0.171011
+0.185166
 testing Data.RandomAcessList.lookup 
-0.077505
+0.109375
 testing Data.Sequence.index
-0.064149
+0.05967
 
 ```
