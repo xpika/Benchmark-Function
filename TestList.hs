@@ -25,30 +25,30 @@ main = do
   print "initialising data"
   let list' =  list
   print "initialising Data.List"
-  runFunction list'
+  runData list'
   print "initialising Data.List of Ints"
   let listInts = Prelude.map fromIntegral list'
-  runFunction listInts
+  runData listInts
   print "initialising Data.Vector"
   let vector = monoidFromApplicativeList (Prelude.map fromIntegral list) :: Vector Integer
-  runFunction vector
+  runData vector
   print "initialising Data.Bimap"
   let bimap = monoidFromList (Prelude.map (fromIntegral >>= Data.Bimap.singleton) list)  :: Bimap Int Integer
-  runFunction bimap
+  runData bimap
   print "initialising Data.RandomAccessList"
   let randomAccessList = Data.RandomAccessList.fromList list'
-  runFunction randomAccessList
+  runData randomAccessList
   print "initialising Data.Sequence"
   let sequen = monoidFromApplicativeList (Prelude.map fromIntegral list) :: Seq Integer
-  runFunction sequen
+  runData sequen
   print "finish initialising data"
   putStrLn "testing Prelude.!! " 
-  timeAndPrintAction (Control.Monad.forM listInts (\x -> runFunction ((Prelude.!!) list' (x-1))))
+  timeAndPrintAction (Control.Monad.forM listInts (\x -> runData ((Prelude.!!) list' (x-1))))
   putStrLn "testing Data.Vector.! " 
-  timeAndPrintAction (Control.Monad.forM listInts (\x -> runFunction ((Data.Vector.!) vector (x-1))))
+  timeAndPrintAction (Control.Monad.forM listInts (\x -> runData ((Data.Vector.!) vector (x-1))))
   putStrLn "testing Data.Bimap.! " 
-  timeAndPrintAction (Control.Monad.forM listInts (\x -> runFunction ((Data.Bimap.!) bimap x)))
+  timeAndPrintAction (Control.Monad.forM listInts (\x -> runData ((Data.Bimap.!) bimap x)))
   putStrLn "testing Data.RandomAcessList.lookup " 
-  timeAndPrintAction ((Control.Monad.forM listInts (\x -> runFunction (Data.RandomAccessList.lookup (x-1) randomAccessList))))
+  timeAndPrintAction ((Control.Monad.forM listInts (\x -> runData (Data.RandomAccessList.lookup (x-1) randomAccessList))))
   putStrLn "testing Data.Sequence.index"
-  timeAndPrintAction ((Control.Monad.forM listInts (\x -> runFunction (Data.Sequence.index sequen (x-1)))))
+  timeAndPrintAction ((Control.Monad.forM listInts (\x -> runData (Data.Sequence.index sequen (x-1)))))
