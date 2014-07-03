@@ -1,8 +1,7 @@
 
 {-# LANGUAGE FlexibleInstances #-}
 
-
-import TimeFunction
+import Test.Benchmark.Function
 import Data.RandomAccessList
 import Control.Monad
 import Data.Vector

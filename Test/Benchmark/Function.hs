@@ -1,10 +1,9 @@
-module TimeFunction where
+module Test.Benchmark.Function where
 
 import Data.IORef
 import Text.Printf
 import Data.Time
 import System.IO
-import Data.Binary
 import Data.Char
 import System.Random
 
